@@ -4,7 +4,7 @@ This directory contains Notepad++ syntax highlighting plugin for FDS.
 
 For more information, visit https://github.com/firetools/blenderfds/wiki/FDS-syntax-highlighting-for-Notepad++
 
-## License
+### License
 
 This plugin is released under the GNU General Public License (GPL) 2011 
 by Dipl.-Ing. Manuel Kitzlinger, Technische Universitaet Darmstadt,
