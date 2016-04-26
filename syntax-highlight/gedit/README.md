@@ -2,7 +2,8 @@
 
 This directory contains GEdit syntax highlighting plugin for FDS.
 
-For more information, visit https://github.com/firetools/blenderfds/wiki/GEdit-syntax-highlighting-for-FDS
+For more information, visit:
+https://github.com/firetools/blenderfds/wiki/Syntax-highlighting-for-GEdit
 
 ### License
 
