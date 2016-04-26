@@ -2,7 +2,8 @@
 
 This directory contains Notepad++ syntax highlighting plugin for FDS.
 
-For more information, visit https://github.com/firetools/blenderfds/wiki/FDS-syntax-highlighting-for-Notepad++
+For more information, visit:
+https://github.com/firetools/blenderfds/wiki/Syntax-highlighting-for-Notepad-plus-plus
 
 ### License
 
