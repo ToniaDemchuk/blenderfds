@@ -41,7 +41,7 @@ def get_cell_sizes(context, ob):
         dimensions[0] / bf_mesh_ijk[0],
         dimensions[1] / bf_mesh_ijk[1],
         dimensions[2] / bf_mesh_ijk[2],
-    ]
+    ]   
     
 def set_cell_sizes(context, ob, desired_cell_sizes, snap_to_origin=True, poisson_restriction=True):
     """Set exact MESH cell size to Blender object by adapting its dimensions.
@@ -66,6 +66,7 @@ def set_cell_sizes(context, ob, desired_cell_sizes, snap_to_origin=True, poisson
     z1 = z0 + new_ijk[2] * desired_cell_sizes[2]
     # Send new geometry to object, do not change the center
     ob.bf_mesh_ijk = new_ijk
+    ob.bf_mesh_res = desired_cell_sizes
     geometry.from_fds.xbs_to_ob(((x0, x1, y0, y1, z0, z1),), context, ob, bf_xb="BBOX", update_center=False)
     # Verify Object movement and return moved or not
     ob_moved = any(map(lambda x, y: x - y > epsilon, (x0, x1, y0, y1, z0, z1), current_xbs[0]))

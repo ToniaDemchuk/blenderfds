@@ -1409,7 +1409,26 @@ class ON_PROF(BFNamelist):
 class OP_MESH_IJK_export(BFExportProp):
     bpy_idname = "bf_mesh_ijk_export"
     bpy_type = Object
+    bpy_other = {
+        "default": True
+    }
 
+@subscribe
+class OP_MESH_RES(BFNoAutoUIMod, BFProp):
+    label = "RES"
+    description = "Cell sizes in x, y, and z direction"
+    fds_label = "RES"
+    bf_prop_export = OP_MESH_IJK_export
+    bpy_type = Object
+    bpy_idname = "bf_mesh_res"
+    bpy_prop = FloatVectorProperty
+    bpy_other =  {
+        "size": 3,
+        "min": 0.001,
+        "default": (0.1,0.1,0.1),
+    }    
+     
+                     
 @subscribe
 class OP_MESH_IJK(BFProp):
     label = "IJK"
@@ -1422,7 +1441,7 @@ class OP_MESH_IJK(BFProp):
     bpy_other =  {
         "size": 3,
         "min": 1,
-        "default": (10,10,10),
+        "default": (20,20,20),
     }
 
     def check(self, context):
@@ -1451,7 +1470,7 @@ class ON_MESH(BFNamelist):
     fds_label = "MESH"
     bpy_type = Object
     bf_prop_export = OP_export
-    bf_props = OP_ID, OP_FYI, OP_MESH_IJK, OP_XB_bbox, OP_free
+    bf_props = OP_ID, OP_FYI, OP_MESH_IJK, OP_MESH_RES, OP_XB_bbox, OP_free
     bf_other = {
         "draw_type": "WIRE",
     }
